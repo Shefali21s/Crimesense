@@ -1,0 +1,8 @@
+district,total_cases,violent_cases,cyber_cases,avg_risk_index,raw_score,safety_score,safety_label
+Central,2804,465,1280,9.49,1104.741003850917,36.7,Moderate
+East,3206,336,2105,12.05,1213.9590269650114,30.4,High Risk
+North,4704,360,3520,14.92,1745.1227514408497,0.0,High Risk
+South,3689,439,2250,11.49,1408.5933181321113,19.3,High Risk
+West,3405,413,2050,11.12,1302.5824470048783,25.4,High Risk
+Whitefield,3736,311,2720,14.64,1393.9858776910164,20.1,High Risk
+Yelahanka,2856,258,2010,12.94,1072.22614077258,38.6,Moderate

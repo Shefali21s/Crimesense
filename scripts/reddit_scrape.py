@@ -1,14 +1,3 @@
-"""
-CrimeSense — Reddit Scraper
-Author: Shefali
-Scrapes r/bangalore for crime-related posts using public JSON endpoints.
-
-Usage:
-    python scripts/reddit_scrape.py
-Output:
-    data/processed/reddit_new.csv
-"""
-
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -16,9 +5,6 @@ import requests
 import pandas as pd
 import time
 from datetime import datetime
-from pathlib import Path
-
-OUT = Path(__file__).parent.parent / "data" / "processed"
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
@@ -69,7 +55,8 @@ print(f"\nTotal posts: {len(posts)}")
 
 if len(posts) > 0:
     df = pd.DataFrame(posts).drop_duplicates(subset='text')
-    df.to_csv(OUT / "reddit_new.csv", index=False)
-    print(f"Saved: data/processed/reddit_new.csv ({len(df)} rows)")
+    df.to_csv('reddit_new.csv', index=False)
+    print(f"Saved: reddit_new.csv ({len(df)} rows)")
 else:
     print("No posts collected.")
+    

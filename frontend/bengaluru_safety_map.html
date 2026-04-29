@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1f2606a9cf441c794ca53a61c2c2b702 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position:fixed; bottom:30px; left:30px; z-index:1000;
+     background:white; padding:15px; border-radius:8px; border:1px solid #ccc;">
+  <b>Safety Level</b><br>
+  <span style="color:green">●</span> Safe (60–100)<br>
+  <span style="color:orange">●</span> Moderate (35–59)<br>
+  <span style="color:red">●</span> High Risk (0–34)
+</div>
+    
+            <div class="folium-map" id="map_1f2606a9cf441c794ca53a61c2c2b702" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1f2606a9cf441c794ca53a61c2c2b702 = L.map(
+                "map_1f2606a9cf441c794ca53a61c2c2b702",
+                {
+                    center: [12.9716, 77.5946],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8cfaf318e553ef6f365c63cbb47a09ea = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8cfaf318e553ef6f365c63cbb47a09ea.addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+            var circle_marker_c65ff61dcf1d594a25eacd12fceb2b67 = L.circleMarker(
+                [12.9716, 77.5946],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+        var popup_6954f12d249e8948a18d02a92cec71af = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_79def6fe5aa519679e26548af5ec99c1 = $(`<div id="html_79def6fe5aa519679e26548af5ec99c1" style="width: 100.0%; height: 100.0%;"><b>Central</b><br>             Safety Score: 36.7/100<br>             Status: Moderate<br>             Total Cases (2024): 2804<br>             Avg Risk Index: 9.49</div>`)[0];
+                popup_6954f12d249e8948a18d02a92cec71af.setContent(html_79def6fe5aa519679e26548af5ec99c1);
+            
+        
+
+        circle_marker_c65ff61dcf1d594a25eacd12fceb2b67.bindPopup(popup_6954f12d249e8948a18d02a92cec71af)
+        ;
+
+        
+    
+    
+            circle_marker_c65ff61dcf1d594a25eacd12fceb2b67.bindTooltip(
+                `<div>
+                     Central — Moderate (36.7/100)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51b8a92a551c43a080702e8e04abc7ec = L.circleMarker(
+                [12.9868, 77.6473],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+        var popup_fda4b7aa0f020f5f6a61a9633e2372a1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_28831a8113c2197d5f49f9b567c7841a = $(`<div id="html_28831a8113c2197d5f49f9b567c7841a" style="width: 100.0%; height: 100.0%;"><b>East</b><br>             Safety Score: 30.4/100<br>             Status: High Risk<br>             Total Cases (2024): 3206<br>             Avg Risk Index: 12.05</div>`)[0];
+                popup_fda4b7aa0f020f5f6a61a9633e2372a1.setContent(html_28831a8113c2197d5f49f9b567c7841a);
+            
+        
+
+        circle_marker_51b8a92a551c43a080702e8e04abc7ec.bindPopup(popup_fda4b7aa0f020f5f6a61a9633e2372a1)
+        ;
+
+        
+    
+    
+            circle_marker_51b8a92a551c43a080702e8e04abc7ec.bindTooltip(
+                `<div>
+                     East — High Risk (30.4/100)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3711faf186e6ea339014ab4c34da60d3 = L.circleMarker(
+                [13.0358, 77.597],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+        var popup_3003b51a93589f0112c1d1f0be28f014 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d2dbfc41ef9087aa6b4c5401a538f8f3 = $(`<div id="html_d2dbfc41ef9087aa6b4c5401a538f8f3" style="width: 100.0%; height: 100.0%;"><b>North</b><br>             Safety Score: 0.0/100<br>             Status: High Risk<br>             Total Cases (2024): 4704<br>             Avg Risk Index: 14.92</div>`)[0];
+                popup_3003b51a93589f0112c1d1f0be28f014.setContent(html_d2dbfc41ef9087aa6b4c5401a538f8f3);
+            
+        
+
+        circle_marker_3711faf186e6ea339014ab4c34da60d3.bindPopup(popup_3003b51a93589f0112c1d1f0be28f014)
+        ;
+
+        
+    
+    
+            circle_marker_3711faf186e6ea339014ab4c34da60d3.bindTooltip(
+                `<div>
+                     North — High Risk (0.0/100)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69f4430094e084be19079eb84bf5bb72 = L.circleMarker(
+                [12.9198, 77.6187],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+        var popup_504e6aa601d58117f883a68dee0d921f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d7ac7550f093e5faa8f7067225308600 = $(`<div id="html_d7ac7550f093e5faa8f7067225308600" style="width: 100.0%; height: 100.0%;"><b>South</b><br>             Safety Score: 19.3/100<br>             Status: High Risk<br>             Total Cases (2024): 3689<br>             Avg Risk Index: 11.49</div>`)[0];
+                popup_504e6aa601d58117f883a68dee0d921f.setContent(html_d7ac7550f093e5faa8f7067225308600);
+            
+        
+
+        circle_marker_69f4430094e084be19079eb84bf5bb72.bindPopup(popup_504e6aa601d58117f883a68dee0d921f)
+        ;
+
+        
+    
+    
+            circle_marker_69f4430094e084be19079eb84bf5bb72.bindTooltip(
+                `<div>
+                     South — High Risk (19.3/100)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80a452ba05fd81b6cb854e86ebcf21fc = L.circleMarker(
+                [12.9762, 77.5504],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+        var popup_970d64722be500c4c81fc3d52e8b7d58 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9a898f18314c5e87ef6e5d7d6e6cbbf7 = $(`<div id="html_9a898f18314c5e87ef6e5d7d6e6cbbf7" style="width: 100.0%; height: 100.0%;"><b>West</b><br>             Safety Score: 25.4/100<br>             Status: High Risk<br>             Total Cases (2024): 3405<br>             Avg Risk Index: 11.12</div>`)[0];
+                popup_970d64722be500c4c81fc3d52e8b7d58.setContent(html_9a898f18314c5e87ef6e5d7d6e6cbbf7);
+            
+        
+
+        circle_marker_80a452ba05fd81b6cb854e86ebcf21fc.bindPopup(popup_970d64722be500c4c81fc3d52e8b7d58)
+        ;
+
+        
+    
+    
+            circle_marker_80a452ba05fd81b6cb854e86ebcf21fc.bindTooltip(
+                `<div>
+                     West — High Risk (25.4/100)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e29636857f5b0f75fe3a2357e8af392b = L.circleMarker(
+                [12.9698, 77.7499],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+        var popup_9b3e304d5159af0e8ca650842ac1ef81 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c126eed3e4d6dacf838ca6ce6cb0d976 = $(`<div id="html_c126eed3e4d6dacf838ca6ce6cb0d976" style="width: 100.0%; height: 100.0%;"><b>Whitefield</b><br>             Safety Score: 20.1/100<br>             Status: High Risk<br>             Total Cases (2024): 3736<br>             Avg Risk Index: 14.64</div>`)[0];
+                popup_9b3e304d5159af0e8ca650842ac1ef81.setContent(html_c126eed3e4d6dacf838ca6ce6cb0d976);
+            
+        
+
+        circle_marker_e29636857f5b0f75fe3a2357e8af392b.bindPopup(popup_9b3e304d5159af0e8ca650842ac1ef81)
+        ;
+
+        
+    
+    
+            circle_marker_e29636857f5b0f75fe3a2357e8af392b.bindTooltip(
+                `<div>
+                     Whitefield — High Risk (20.1/100)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7a4a0147655ee337d90443b4153a83f = L.circleMarker(
+                [13.1005, 77.5963],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_1f2606a9cf441c794ca53a61c2c2b702);
+        
+    
+        var popup_fec8e71d2cc325899cdba0d27e8d7eba = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_10215eac3183d79bb5a6c57caa44929e = $(`<div id="html_10215eac3183d79bb5a6c57caa44929e" style="width: 100.0%; height: 100.0%;"><b>Yelahanka</b><br>             Safety Score: 38.6/100<br>             Status: Moderate<br>             Total Cases (2024): 2856<br>             Avg Risk Index: 12.94</div>`)[0];
+                popup_fec8e71d2cc325899cdba0d27e8d7eba.setContent(html_10215eac3183d79bb5a6c57caa44929e);
+            
+        
+
+        circle_marker_a7a4a0147655ee337d90443b4153a83f.bindPopup(popup_fec8e71d2cc325899cdba0d27e8d7eba)
+        ;
+
+        
+    
+    
+            circle_marker_a7a4a0147655ee337d90443b4153a83f.bindTooltip(
+                `<div>
+                     Yelahanka — Moderate (38.6/100)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
