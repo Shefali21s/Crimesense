@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CrimeSense — Underreporting Intelligence · Bengaluru
 
 > **Author:** Shefali  
@@ -266,3 +267,6 @@ Your dashboard will be live at `https://YOUR-FRONTEND.onrender.com`
 ---
 
 *CrimeSense · Academic Project · Shefali · 2024*
+=======
+# Crimesense
+>>>>>>> 38cf5c1be686fae31b9fc4a98ca0c5cb48dde2ba
